@@ -21,4 +21,32 @@ class CustomIcon {
       const IconData(0xe63c, fontFamily: 'custom', matchTextDirection: true);
   static const IconData scan =
       const IconData(0xe7d8, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData arrowRight =
+      const IconData(0xe65c, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData history =
+      const IconData(0xe626, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData collect =
+      const IconData(0xe620, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData publish =
+      const IconData(0xe693, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData createHub =
+      const IconData(0xe720, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData activityIcon =
+      const IconData(0xe62e, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData liveRoom =
+      const IconData(0xe71e, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData luckBag =
+      const IconData(0xe635, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData flow =
+      const IconData(0xe6ea, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData orderMenu =
+      const IconData(0xe600, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData caller =
+      const IconData(0xe60b, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData protected =
+      const IconData(0xe833, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData nightMode =
+      const IconData(0xe603, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData themeIcon =
+      const IconData(0xe639, fontFamily: 'custom', matchTextDirection: true);
 }
