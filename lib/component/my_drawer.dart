@@ -109,11 +109,14 @@ class MyDrawer extends StatelessWidget {
                   border: Border(
                       bottom:
                           BorderSide(width: 0.5, color: Color(0xff8d8d8d)))),
-              child: Row(children: <Widget>[
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Row(
+                      mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
                         RichText(
                             text: TextSpan(
@@ -138,7 +141,8 @@ class MyDrawer extends StatelessWidget {
                   ],
                 ),
                 IconButton(icon: Icon(CustomIcon.arrowRight), onPressed: null)
-              ])),
+              ]
+            )),
           Container(
               padding: EdgeInsets.symmetric(vertical: 15.0),
               margin: EdgeInsets.symmetric(vertical: 15.0),

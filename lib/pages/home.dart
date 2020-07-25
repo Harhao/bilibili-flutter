@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import "../component/my_drawer.dart";
 import '../component/avatar_menu.dart';
 import '../config/customIcon.dart';
+import '../config/tabview_page.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -80,10 +81,10 @@ class _HomeState extends State<Home> {
                       tabs: Tabs,
                     ),
                   ))),
-          body: TabBarView(
-              children: Tabs.map((Tab tab) {
-            return Center(child: Text(tab.text));
-          }).toList()),
+          body: TabBarView(children:<Widget>[
+            // ignore: sdk_version_ui_as_code
+            ...TabViewPage.list
+          ]),
           drawer: Drawer(
             child: MyDrawer(),
           ),
@@ -113,4 +114,5 @@ class _HomeState extends State<Home> {
       _selectedIndex = index;
     });
   }
+
 }
