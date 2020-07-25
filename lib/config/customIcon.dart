@@ -17,4 +17,8 @@ class CustomIcon {
       const IconData(0xe705, fontFamily: 'custom', matchTextDirection: true);
   static const IconData memberShop =
       const IconData(0xe601, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData wallet =
+      const IconData(0xe63c, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData scan =
+      const IconData(0xe7d8, fontFamily: 'custom', matchTextDirection: true);
 }
