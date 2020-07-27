@@ -1,17 +1,17 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import "../component/my_drawer.dart";
 import '../component/avatar_menu.dart';
-import '../config/customIcon.dart';
 import '../config/tabview_page.dart';
-
+import '../component/navigation_bar.dart';
+import '../config/customIcon.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     final List<Tab> Tabs = <Tab>[
@@ -88,31 +88,7 @@ class _HomeState extends State<Home> {
           drawer: Drawer(
             child: MyDrawer(),
           ),
-          bottomNavigationBar: BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
-              fixedColor: Theme.of(context).primaryColor,
-              unselectedItemColor: Color(0xff8b8b8b),
-              unselectedLabelStyle: TextStyle(color: Color(0xff8b8b8b)),
-              unselectedFontSize: 14.0,
-              currentIndex: _selectedIndex,
-              onTap: selectedBottomBar,
-              items: <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                    icon: Icon(CustomIcon.home), title: Text('首页')),
-                BottomNavigationBarItem(
-                    icon: Icon(CustomIcon.channel), title: Text('频道')),
-                BottomNavigationBarItem(
-                    icon: Icon(CustomIcon.dynamicState), title: Text('动态')),
-                BottomNavigationBarItem(
-                    icon: Icon(CustomIcon.memberShop), title: Text('会员购')),
-              ]),
+          bottomNavigationBar: NavigationBar(selectedIndex: 0) ,
         ));
   }
-
-  void selectedBottomBar(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
 }
