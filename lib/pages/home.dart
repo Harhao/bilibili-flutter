@@ -1,7 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import "../component/my_drawer.dart";
 import '../component/avatar_menu.dart';
 import '../config/tabview_page.dart';
 import '../config/customIcon.dart';
@@ -84,9 +83,6 @@ class _HomeState extends State<Home> {
             // ignore: sdk_version_ui_as_code
             ...TabViewPage.list
           ]),
-          drawer: Drawer(
-            child: MyDrawer(),
-          ),
         ));
   }
 }

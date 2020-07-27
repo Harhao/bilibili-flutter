@@ -7,6 +7,7 @@ import 'channel.dart';
 import 'home.dart';
 import 'member_shop.dart';
 import 'dynamic_state.dart';
+import '../utils/inherit_context.dart';
 
 class Entry extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class Entry extends StatefulWidget {
 
 class _EntryState extends State<Entry> {
   int _selectedIndex = 0;
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final List<Widget> widgetList = <Widget>[
     Home(),
     Channel(),
@@ -24,8 +26,14 @@ class _EntryState extends State<Entry> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: true);
-    return Scaffold(
+    return InheritedContext(
+      openDrawer: openDrawer,
+        child: Scaffold(
+      key: _scaffoldKey,
       body: Hero(tag: 'Entry', child: widgetList.elementAt(_selectedIndex)),
+      drawer: Drawer(
+        child: MyDrawer(),
+      ),
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           fixedColor: Theme.of(context).primaryColor,
@@ -44,12 +52,16 @@ class _EntryState extends State<Entry> {
             BottomNavigationBarItem(
                 icon: Icon(CustomIcon.memberShop), title: Text('会员购')),
           ]),
-    );
+    ));
   }
 
   void selectedBottomBar(int index) {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  void openDrawer() {
+    _scaffoldKey.currentState.openDrawer();
   }
 }
