@@ -18,6 +18,7 @@ class _RecommentState extends State<Recomment> {
     return Container(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
         child: ListView(
+          shrinkWrap: true,
           children: <Widget>[
             Container(
               width: MediaQuery.of(context).size.width,
@@ -39,16 +40,18 @@ class _RecommentState extends State<Recomment> {
                     new SwiperPagination(alignment: Alignment.bottomRight),
               ),
             ),
-            // GridView.builder(
-            //   gridDelegate:
-            //       SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-            //   itemCount: 8,
-            //   itemBuilder: (context, index) {
-            //     return ListTile(
-            //       title: Text('$index}'),
-            //     );
-            //   },
-            // ),
+            GridView.builder(
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text('${index}'),
+                );
+              },
+            ),
           ],
         ));
   }
