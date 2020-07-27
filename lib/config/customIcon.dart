@@ -49,4 +49,10 @@ class CustomIcon {
       const IconData(0xe603, fontFamily: 'custom', matchTextDirection: true);
   static const IconData themeIcon =
       const IconData(0xe639, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData playIcon =
+      const IconData(0xe604, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData comment =
+      const IconData(0xe6e6, fontFamily: 'custom', matchTextDirection: true);
+  static const IconData dot =
+      const IconData(0xe667, fontFamily: 'custom', matchTextDirection: true);
 }

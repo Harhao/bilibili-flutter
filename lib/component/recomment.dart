@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'video_card.dart';
 
 class Recomment extends StatefulWidget {
   @override
@@ -29,10 +30,12 @@ class _RecommentState extends State<Recomment> {
               alignment: Alignment.topCenter,
               child: new Swiper(
                 itemBuilder: (BuildContext context, int index) {
-                  return new Image.network(
+                  return ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      child: new Image.network(
                     list[index],
                     fit: BoxFit.contain,
-                  );
+                  ));
                 },
                 loop: true,
                 itemCount: list.length,
@@ -40,16 +43,17 @@ class _RecommentState extends State<Recomment> {
                     new SwiperPagination(alignment: Alignment.bottomRight),
               ),
             ),
+            Padding(padding: EdgeInsets.only(top: 15.0)),
             GridView.builder(
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 15.0,
+                  mainAxisSpacing: 10.0),
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: 8,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text('${index}'),
-                );
+                return VideoCard();
               },
             ),
           ],
