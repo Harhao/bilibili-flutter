@@ -51,8 +51,9 @@ class _VideoCardState extends State<VideoCard> {
                   padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
                 ),
                 Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Row(
@@ -62,10 +63,11 @@ class _VideoCardState extends State<VideoCard> {
                           icon: Icon(
                             CustomIcon.dot,
                             color: Color(0xff8d8d8d),
+                            size: 18.0,
                           ),
-                          color: Colors.red,
+                          iconSize: 18.0,
                           padding: EdgeInsets.all(0),
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.centerRight,
                           onPressed: null)
                     ],
                   ),

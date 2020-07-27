@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import "../component/my_drawer.dart";
 import '../component/avatar_menu.dart';
 import '../config/tabview_page.dart';
-import '../component/navigation_bar.dart';
 import '../config/customIcon.dart';
 class Home extends StatefulWidget {
   @override
@@ -88,7 +87,6 @@ class _HomeState extends State<Home> {
           drawer: Drawer(
             child: MyDrawer(),
           ),
-          bottomNavigationBar: NavigationBar(selectedIndex: 0) ,
         ));
   }
 }

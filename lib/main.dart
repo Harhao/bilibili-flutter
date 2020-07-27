@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'routers/routers.dart';
 import 'routers/application.dart';
-import 'pages/home.dart';
+import 'pages/entry.dart';
 
 void main() {
   final router = Router();
@@ -14,7 +14,7 @@ void main() {
         theme: ThemeData(primaryColor: Color(0xfffb7299)),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Application.router.generator,
-        home: Home(),
+        home: Entry(),
     )
   );
 }

@@ -13,11 +13,6 @@ class Routes {
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
       return Text("没有找到widget");
     });
-    router.define(channel, handler: ChannelPageHandler, transitionType: null);
-    router.define(dynamicState,
-        handler: DynamicStatePageHandler, transitionType: null);
-    router.define(memberShop,
-        handler: MemberShopPageHandler, transitionType: null);
-    router.define(root, handler: HomePageHandler, transitionType: null);
+    router.define(root, handler: EntryPageHandler, transitionType: null);
   }
 }
