@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import "../component/my_drawer.dart";
 import '../config/customIcon.dart';
 import 'channel.dart';
@@ -22,14 +23,9 @@ class _EntryState extends State<Entry> {
   ];
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: true);
     return Scaffold(
-      body: Hero(
-        tag: 'Entry',
-        child: widgetList[_selectedIndex]
-      ),
-      drawer: Drawer(
-        child: MyDrawer(),
-      ),
+      body: Hero(tag: 'Entry', child: widgetList.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           fixedColor: Theme.of(context).primaryColor,
