@@ -32,13 +32,44 @@ class _VideoCardState extends State<VideoCard> {
                         child: Image.network(
                             "http://i2.hdslb.com/bfs/archive/fb9dfd1e58ffd9e162476113ab1705aadad3a167.jpg@480w_270h_1c")),
                     Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Row(children: <Widget>[
-                          Row(children: <Widget>[]),
-                          Text("13:04")
-                        ]))
+                        bottom: 6.0,
+                        left: 5.0,
+                        right: 5.0,
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Row(children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    Icon(
+                                      CustomIcon.playIcon,
+                                      size: 18.0,
+                                      color: Colors.white,
+                                    ),
+                                    Padding(padding: EdgeInsets.only(left: 5.0)),
+                                    Text("398",style: TextStyle(color: Colors.white),),
+                                    Padding(padding: EdgeInsets.only(right: 5.0)),
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(
+                                      CustomIcon.comment,
+                                      size: 18.0,
+                                      color: Colors.white,
+                                    ),
+                                    Padding(padding: EdgeInsets.only(left: 5.0)),
+                                    Text("298",style: TextStyle(color: Colors.white),)
+                                  ],
+                                ),
+                              ]),
+                              Text(
+                                "13:04",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ]))
                   ],
                 ),
                 Container(
@@ -57,17 +88,18 @@ class _VideoCardState extends State<VideoCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[Text("社科人文.辽宁舰")],
                       ),
                       IconButton(
                           icon: Icon(
                             CustomIcon.dot,
-                            color: Color(0xff8d8d8d),
-                            size: 18.0,
+                            color: Color(0xff000000),
+                            size: 16.0,
                           ),
                           iconSize: 18.0,
                           padding: EdgeInsets.all(0),
-                          alignment: Alignment.centerRight,
+                          alignment: Alignment.topRight,
                           onPressed: null)
                     ],
                   ),

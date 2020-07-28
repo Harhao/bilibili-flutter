@@ -33,8 +33,8 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.all(5.0),
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
-                    // backgroundBlendMode: BlendMode.hardLight,
-                    backgroundBlendMode: BlendMode.lighten,
+                    backgroundBlendMode: BlendMode.hardLight,
+                    // backgroundBlendMode: BlendMode.colorDodge,
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                   ),
                   child: Builder(
@@ -46,14 +46,14 @@ class _HomeState extends State<Home> {
                                 Padding(padding: EdgeInsets.only(left: 8.0)),
                                 Icon(
                                   Icons.search,
-                                  color: Colors.white30,
+                                  color: Colors.white,
                                   size: 26.0,
                                 ),
                                 Padding(padding: EdgeInsets.only(left: 8.0)),
                                 Text(
                                   "王者荣耀职业联赛",
                                   style: TextStyle(
-                                    color: Colors.white30,
+                                    color: Colors.white,
                                     fontSize: 18.0,
                                   ),
                                 ),

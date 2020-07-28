@@ -87,7 +87,7 @@ class MyDrawer extends StatelessWidget {
                       child: Text(
                         "正式会员",
                         style:
-                            TextStyle(color: Color(0xfff2d1db), fontSize: 12.0),
+                            TextStyle(color: Colors.white, fontSize: 12.0),
                       ),
                     ),
                   ],
@@ -112,7 +112,7 @@ class MyDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                   border: Border(
                       bottom:
-                          BorderSide(width: 0.5, color: Color(0xff8d8d8d)))),
+                          BorderSide(width: 0.3, color: Color(0xff8d8d8d)))),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -177,7 +177,7 @@ class MyDrawer extends StatelessWidget {
                   border: Border(
                       top: BorderSide(width: 0.3, color: Color(0xff929292)))),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   Flexible(
@@ -186,6 +186,7 @@ class MyDrawer extends StatelessWidget {
                               onTap: () => Application.router.navigateTo(context, '/theme'),
                               child: Row(
                                 children: <Widget>[
+                                  Padding(padding: EdgeInsets.only(left: 10.0)),
                                   Icon(
                                     CustomIcon.themeIcon,
                                     color: Color(0xff929292),
