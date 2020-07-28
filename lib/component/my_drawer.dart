@@ -77,7 +77,7 @@ class MyDrawer extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 3.0),
                       decoration: BoxDecoration(
-                          color: Color(0xffbd778b),
+                          color: Theme.of(context).primaryColor.withAlpha(1),
                           border: Border.all(width: 1, color: Colors.white),
                           borderRadius: BorderRadius.all(Radius.circular(5.0))),
                       child: Text(

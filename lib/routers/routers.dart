@@ -4,9 +4,7 @@ import 'router_handler.dart';
 
 class Routes {
   static String root = '/';
-  static String channel = '/channel';
-  static String dynamicState = '/dynamicState';
-  static String memberShop = '/memberShop';
+  static String search = '/search';
 
   static void configureRoute(Router router) {
     router.notFoundHandler = Handler(
@@ -14,5 +12,6 @@ class Routes {
       return Text("没有找到widget");
     });
     router.define(root, handler: EntryPageHandler, transitionType: null);
+    router.define(search, handler: SearchPageHandler, transitionType: null);
   }
 }

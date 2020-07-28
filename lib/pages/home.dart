@@ -1,9 +1,11 @@
-
+import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../component/avatar_menu.dart';
 import '../config/tabview_page.dart';
 import '../config/customIcon.dart';
+import '../routers/application.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -30,26 +32,32 @@ class _HomeState extends State<Home> {
               title: Container(
                   padding: EdgeInsets.all(5.0),
                   decoration: BoxDecoration(
-                    color: Color(0xffe5678c),
+                    color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
+
                   ),
-                  child: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-                    Padding(padding: EdgeInsets.only(left: 8.0)),
-                    Icon(
-                      Icons.search,
-                      color: Colors.white30,
-                      size: 26.0,
-                    ),
-                    Padding(padding: EdgeInsets.only(left: 8.0)),
-                    Text(
-                      "王者荣耀职业联赛",
-                      style: TextStyle(
-                        color: Colors.white30,
-                        fontSize: 18.0,
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(right: 20.0)),
-                  ])),
+                  child: Builder(
+                      builder: (context) => GestureDetector(
+                          onTap: _navigateToSearchPage,
+                          child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Padding(padding: EdgeInsets.only(left: 8.0)),
+                                Icon(
+                                  Icons.search,
+                                  color: Colors.white30,
+                                  size: 26.0,
+                                ),
+                                Padding(padding: EdgeInsets.only(left: 8.0)),
+                                Text(
+                                  "王者荣耀职业联赛",
+                                  style: TextStyle(
+                                    color: Colors.white30,
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                                Padding(padding: EdgeInsets.only(right: 20.0)),
+                              ])))),
               actions: <Widget>[
                 IconButton(
                     icon: Icon(
@@ -79,10 +87,15 @@ class _HomeState extends State<Home> {
                       tabs: Tabs,
                     ),
                   ))),
-          body: TabBarView(children:<Widget>[
+          body: TabBarView(children: <Widget>[
             // ignore: sdk_version_ui_as_code
             ...TabViewPage.list
           ]),
         ));
+  }
+
+  void _navigateToSearchPage() {
+    Application.router
+        .navigateTo(context, '/search', transition: TransitionType.fadeIn);
   }
 }
