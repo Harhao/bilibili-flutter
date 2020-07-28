@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
+import '../store/theme._setting.dart';
 import '../config/drawer_list.dart';
 import '../config/customIcon.dart';
+import '../routers/application.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ThemeSetting appTheme = Provider.of<ThemeSetting>(context);
     return Stack(
       children: <Widget>[
         ListView(padding: EdgeInsets.zero, children: <Widget>[
@@ -110,39 +114,39 @@ class MyDrawer extends StatelessWidget {
                       bottom:
                           BorderSide(width: 0.5, color: Color(0xff8d8d8d)))),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        RichText(
-                            text: TextSpan(
-                                text: '我的大会员',
-                                style: TextStyle(
-                                    color: Theme.of(context).primaryColor,
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold))),
-                        Padding(padding: EdgeInsets.only(left: 15.0)),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            RichText(
+                                text: TextSpan(
+                                    text: '我的大会员',
+                                    style: TextStyle(
+                                        color: Theme.of(context).primaryColor,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold))),
+                            Padding(padding: EdgeInsets.only(left: 15.0)),
+                            Text(
+                              "了解更多权益",
+                              style: TextStyle(
+                                  fontSize: 15.0, color: Color(0xffbdbdbd)),
+                            )
+                          ],
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10.0)),
                         Text(
-                          "了解更多权益",
-                          style: TextStyle(
-                              fontSize: 15.0, color: Color(0xffbdbdbd)),
+                          "番剧抢先看，4K超清体验",
+                          style: TextStyle(fontSize: 15.0),
                         )
                       ],
                     ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    Text(
-                      "番剧抢先看，4K超清体验",
-                      style: TextStyle(fontSize: 15.0),
-                    )
-                  ],
-                ),
-                IconButton(icon: Icon(CustomIcon.arrowRight), onPressed: null)
-              ]
-            )),
+                    IconButton(
+                        icon: Icon(CustomIcon.arrowRight), onPressed: null)
+                  ])),
           Container(
               padding: EdgeInsets.symmetric(vertical: 15.0),
               margin: EdgeInsets.symmetric(vertical: 15.0),
@@ -169,40 +173,64 @@ class MyDrawer extends StatelessWidget {
             child: Container(
               height: 60.0,
               decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border(top: BorderSide(width: 0.3, color: Color(0xff929292)))
-              ),
+                  color: Colors.white,
+                  border: Border(
+                      top: BorderSide(width: 0.3, color: Color(0xff929292)))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Icon(CustomIcon.settting,color: Color(0xff929292),),
-                      Padding(padding: EdgeInsets.only(left: 10.0)),
-                      Text("设置", style: TextStyle(
-                        color: Color(0xff929292)
-                      ),)
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Icon(CustomIcon.nightMode,color: Color(0xff929292),),
-                      Padding(padding: EdgeInsets.only(left: 10.0)),
-                      Text("夜间模式", style: TextStyle(
-                        color: Color(0xff929292)
-                      ),)
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Icon(CustomIcon.themeIcon,color: Color(0xff929292),),
-                      Padding(padding: EdgeInsets.only(left: 10.0)),
-                      Text("主题", style: TextStyle(
-                        color: Color(0xff929292)
-                      ),)
-                    ],
-                  ),
+                  Flexible(
+                      child: Builder(
+                          builder: (context) => GestureDetector(
+                              onTap: () => Application.router.navigateTo(context, '/theme'),
+                              child: Row(
+                                children: <Widget>[
+                                  Icon(
+                                    CustomIcon.themeIcon,
+                                    color: Color(0xff929292),
+                                  ),
+                                  Padding(padding: EdgeInsets.only(left: 10.0)),
+                                  Text(
+                                    "主题",
+                                    style: TextStyle(color: Color(0xff929292)),
+                                  )
+                                ],
+                              )))),
+                  Flexible(
+                      child: Builder(
+                          builder: (context) => GestureDetector(
+                              onTap: null,
+                              child: Row(
+                                children: <Widget>[
+                                  Icon(
+                                    CustomIcon.settting,
+                                    color: Color(0xff929292),
+                                  ),
+                                  Padding(padding: EdgeInsets.only(left: 10.0)),
+                                  Text(
+                                    "设置",
+                                    style: TextStyle(color: Color(0xff929292)),
+                                  )
+                                ],
+                              )))),
+                  Flexible(
+                      child: Builder(
+                          builder: (context) => GestureDetector(
+                              onTap: () => appTheme.changePrimaryColor('night'),
+                              child: Row(
+                                children: <Widget>[
+                                  Icon(
+                                    CustomIcon.nightMode,
+                                    color: Color(0xff929292),
+                                  ),
+                                  Padding(padding: EdgeInsets.only(left: 10.0)),
+                                  Text(
+                                    "夜间模式",
+                                    style: TextStyle(color: Color(0xff929292)),
+                                  )
+                                ],
+                              )))),
                 ],
               ),
             ))

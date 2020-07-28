@@ -33,8 +33,9 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.all(5.0),
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
+                    // backgroundBlendMode: BlendMode.hardLight,
+                    backgroundBlendMode: BlendMode.lighten,
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
-
                   ),
                   child: Builder(
                       builder: (context) => GestureDetector(

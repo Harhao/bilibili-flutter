@@ -3,20 +3,17 @@ import 'package:flutter/material.dart';
 class ThemeSetting with ChangeNotifier {
   static Map<String, Color> themeList = {
     'powder': Color(0xfffb7299),
-    'auntRed': Color(0xff000000),
-    'eggYellow': Color(0xff000000),
-    'treeGreen': Color(0xff000000),
-    'skyBlue': Color(0xff000000),
-    'gayPurple': Color(0xff000000),
-    'night': Color(0xff000000)
+    'auntRed': Color(0xfff24137),
+    'eggYellow': Color(0xffffbf23),
+    'treeGreen': Color(0xff8ac24a),
+    'skyBlue': Color(0xff1f95f2),
+    'gayPurple': Color(0xff9d28b4),
+    'night': Color(0xff0e0e0e)
   };
-  String themeKey = 'powder';
-
+  String themeKey = 'treeGreen';
   void changePrimaryColor(String themeKey) {
-    print('====> $themeKey');
-    themeKey = themeKey;
+    this.themeKey = themeKey;
     notifyListeners();
   }
-
-  get primaryColor => ThemeSetting.themeList[themeKey];
+  Color get primaryColor => ThemeSetting.themeList[themeKey];
 }

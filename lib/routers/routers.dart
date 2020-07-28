@@ -5,6 +5,7 @@ import 'router_handler.dart';
 class Routes {
   static String root = '/';
   static String search = '/search';
+  static String theme = '/theme';
 
   static void configureRoute(Router router) {
     router.notFoundHandler = Handler(
@@ -13,5 +14,6 @@ class Routes {
     });
     router.define(root, handler: EntryPageHandler, transitionType: null);
     router.define(search, handler: SearchPageHandler, transitionType: null);
+    router.define(theme, handler: ThemePageHandler, transitionType: null);
   }
 }

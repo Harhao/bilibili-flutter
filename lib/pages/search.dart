@@ -14,14 +14,11 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     ThemeSetting appTheme = Provider.of<ThemeSetting>(context);
-    print('############ ${appTheme.primaryColor}');
-    // TODO: implement build
     return Scaffold(
       body: Center(
         child: RaisedButton(onPressed: () {
-          appTheme.changePrimaryColor('night');
-          print('************ ${appTheme.primaryColor}');
-        },child: Text('换颜色'))
+          appTheme.changePrimaryColor('powder');
+        },child: Text('换颜色 ${appTheme.themeKey}'))
       )
     );
   }
