@@ -1,9 +1,9 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../component/avatar_menu.dart';
 import '../config/tabview_page.dart';
 import '../config/customIcon.dart';
+
 class Channel extends StatefulWidget {
   @override
   _ChannelState createState() => _ChannelState();
@@ -22,7 +22,7 @@ class _ChannelState extends State<Channel> {
               centerTitle: true,
               elevation: 1.0,
               leading: AvatarMenu(),
-              title: Text("频道"),
+              title: Text("频道",style: TextStyle(color: Colors.white),),
               actions: <Widget>[
                 IconButton(
                     icon: Icon(
@@ -40,21 +40,25 @@ class _ChannelState extends State<Channel> {
               bottom: PreferredSize(
                   preferredSize: Size.fromHeight(48),
                   child: Material(
-                    color: Colors.white,
-                    child: TabBar(
-                      isScrollable: true,
-                      labelStyle: TextStyle(fontSize: 18.0),
-                      labelColor: Theme.of(context).primaryColor,
-                      unselectedLabelColor: Color(0xff8a8a8a),
-                      indicatorColor: Theme.of(context).primaryColor,
-                      indicatorSize: TabBarIndicatorSize.label,
-                      indicatorWeight: 3.0,
-                      tabs: Tabs,
-                    ),
-                  ))),
-          body: TabBarView(children:<Widget>[
+                      color: Colors.white,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                        TabBar(
+                          isScrollable: true,
+                          labelStyle: TextStyle(fontSize: 18.0),
+                          labelColor: Theme.of(context).primaryColor,
+                          unselectedLabelColor: Color(0xff8a8a8a),
+                          indicatorColor: Theme.of(context).primaryColor,
+                          indicatorSize: TabBarIndicatorSize.label,
+                          indicatorWeight: 3.0,
+                          tabs: Tabs,
+                        ),
+                        IconButton(icon: Icon(Icons.menu), onPressed: null)
+                      ])))),
+          body: TabBarView(children: <Widget>[
             // ignore: sdk_version_ui_as_code
-            ...TabViewPage.list
+            ...TabViewPage.channelList
           ]),
         ));
   }

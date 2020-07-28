@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../component/avatar_menu.dart';
-import '../config/tabview_page.dart';
 import '../config/customIcon.dart';
 
 class MemberShop extends StatefulWidget {
@@ -17,7 +16,7 @@ class _MemberShopState extends State<MemberShop> {
           centerTitle: true,
           elevation: 1.0,
           leading: AvatarMenu(),
-          title: Text("会员购"),
+          title: Text("会员购",style: TextStyle(color: Colors.white),),
           actions: <Widget>[
             IconButton(
                 icon: Icon(

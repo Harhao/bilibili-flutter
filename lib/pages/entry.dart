@@ -16,6 +16,7 @@ class Entry extends StatefulWidget {
 
 class _EntryState extends State<Entry> {
   int _selectedIndex = 0;
+  PageController _pageController;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final List<Widget> widgetList = <Widget>[
     Home(),
@@ -23,6 +24,12 @@ class _EntryState extends State<Entry> {
     DynamicState(),
     MemberShop()
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: 0, keepPage: true, viewportFraction: 1.0);
+  }
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: true);
@@ -30,7 +37,16 @@ class _EntryState extends State<Entry> {
       openDrawer: openDrawer,
         child: Scaffold(
       key: _scaffoldKey,
-      body: Hero(tag: 'Entry', child: widgetList.elementAt(_selectedIndex)),
+      // body: Hero(tag: 'Entry', child: widgetList.elementAt(_selectedIndex)),
+      body: PageView.builder(
+        physics: NeverScrollableScrollPhysics(),
+        controller: _pageController,
+        onPageChanged: _pageChange,
+        itemCount: widgetList.length,
+        itemBuilder: (context,index) {
+          return widgetList[_selectedIndex];
+        },
+      ),
       drawer: Drawer(
         child: MyDrawer(),
       ),
@@ -54,11 +70,16 @@ class _EntryState extends State<Entry> {
           ]),
     ));
   }
-
+  void _pageChange(int index) {
+    if(_selectedIndex != index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
+  }
   void selectedBottomBar(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    _pageController.animateToPage(index, duration: Duration(seconds: 1),curve: ElasticInCurve(0));
+    _pageChange(index);
   }
 
   void openDrawer() {

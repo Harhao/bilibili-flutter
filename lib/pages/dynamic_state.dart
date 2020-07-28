@@ -24,7 +24,7 @@ class _DynamicPageState extends State<DynamicState> {
               centerTitle: true,
               elevation: 1.0,
               leading: AvatarMenu(),
-              title: Text("动态"),
+              title: Text("动态",style: TextStyle(color: Colors.white),),
               actions: <Widget>[
                 IconButton(
                     icon: Icon(
@@ -43,7 +43,10 @@ class _DynamicPageState extends State<DynamicState> {
                   preferredSize: Size.fromHeight(48),
                   child: Material(
                     color: Colors.white,
-                    child: TabBar(
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width,
+                        child: TabBar(
                       isScrollable: true,
                       labelStyle: TextStyle(fontSize: 18.0),
                       labelColor: Theme.of(context).primaryColor,
@@ -52,11 +55,11 @@ class _DynamicPageState extends State<DynamicState> {
                       indicatorSize: TabBarIndicatorSize.label,
                       indicatorWeight: 3.0,
                       tabs: Tabs,
-                    ),
+                    )),
                   ))),
           body: TabBarView(children: <Widget>[
             // ignore: sdk_version_ui_as_code
-            ...TabViewPage.list
+            ...TabViewPage.dynamiclList
           ]),
         ));
   }
