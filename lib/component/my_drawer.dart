@@ -16,7 +16,7 @@ class MyDrawer extends StatelessWidget {
         ListView(padding: EdgeInsets.zero, children: <Widget>[
           Container(
               padding: EdgeInsets.only(
-                  top: ScreenUtil().setHeight(60.0),
+                  top: ScreenUtil().setHeight(70.0),
                   left: ScreenUtil().setWidth(30.0),
                   right: ScreenUtil().setWidth(30.0),
                   bottom: ScreenUtil().setHeight(25.0)),
@@ -200,7 +200,7 @@ class MyDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                      top: BorderSide(width: ScreenUtil().setWidth(1), color: Color(0xff929292)))),
+                      top: BorderSide(width: ScreenUtil().setWidth(1), color: Color(0xff8d8d8d)))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
@@ -217,7 +217,7 @@ class MyDrawer extends StatelessWidget {
                                     CustomIcon.themeIcon,
                                     color: Color(0xff929292),
                                   ),
-                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(20.0))),
+                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0))),
                                   Text(
                                     "主题",
                                     style: TextStyle(color: Color(0xff929292)),
@@ -234,7 +234,7 @@ class MyDrawer extends StatelessWidget {
                                     CustomIcon.settting,
                                     color: Color(0xff929292),
                                   ),
-                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(20.0))),
+                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0))),
                                   Text(
                                     "设置",
                                     style: TextStyle(color: Color(0xff929292)),
@@ -251,11 +251,11 @@ class MyDrawer extends StatelessWidget {
                                     CustomIcon.nightMode,
                                     color: Color(0xff929292),
                                   ),
-                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(20.0))),
+                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0))),
                                   Text(
-                                    "夜间模式",
+                                    "夜间",
                                     style: TextStyle(color: Color(0xff929292)),
-                                  )
+                                  ),
                                 ],
                               )))),
                 ],

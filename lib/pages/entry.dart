@@ -7,6 +7,7 @@ import 'channel.dart';
 import 'home.dart';
 import 'member_shop.dart';
 import 'dynamic_state.dart';
+import '../component/custom_drawer.dart';
 import '../utils/inherit_context.dart';
 
 class Entry extends StatefulWidget {
@@ -31,7 +32,8 @@ class _EntryState extends State<Entry> {
         child: Scaffold(
           key: _scaffoldKey,
           body: Hero(tag: 'Entry', child: widgetList.elementAt(_selectedIndex)),
-          drawer: Drawer(
+          drawer: CustomDrawer(
+            widthPercent: 0.7,
             child: MyDrawer(),
           ),
           bottomNavigationBar: BottomNavigationBar(
