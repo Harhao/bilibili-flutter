@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'video_card.dart';
 
 class Recomment extends StatefulWidget {
@@ -17,7 +18,7 @@ class _RecommentState extends State<Recomment> {
       "http://i0.hdslb.com/bfs/archive/24ec47b3b790b4784129d2d33d0fd1bc31c1a7a4.png@480w_270h"
     ];
     return Container(
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(25.0), vertical: ScreenUtil().setHeight(15.0)),
         child: ListView(
           shrinkWrap: true,
           children: <Widget>[
@@ -25,13 +26,13 @@ class _RecommentState extends State<Recomment> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width * 0.295,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                borderRadius: BorderRadius.all(Radius.circular(ScreenUtil().setWidth(40.0))),
               ),
               alignment: Alignment.topCenter,
               child: new Swiper(
                 itemBuilder: (BuildContext context, int index) {
                   return ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(ScreenUtil().setWidth(40.0))),
                       child: new Image.network(
                     list[index],
                     fit: BoxFit.contain,
@@ -43,12 +44,12 @@ class _RecommentState extends State<Recomment> {
                     new SwiperPagination(alignment: Alignment.bottomRight),
               ),
             ),
-            Padding(padding: EdgeInsets.only(top: 15.0)),
+            Padding(padding: EdgeInsets.only(top: ScreenUtil().setHeight(15.0))),
             GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 15.0,
-                  mainAxisSpacing: 10.0),
+                  crossAxisSpacing: ScreenUtil().setHeight(25.0),
+                  mainAxisSpacing: ScreenUtil().setWidth(20.0)),
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: 8,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../config/customIcon.dart';
 
 class VideoCard extends StatefulWidget {
@@ -12,9 +13,9 @@ class _VideoCardState extends State<VideoCard> {
     return Container(
         decoration: BoxDecoration(
           color: Color(0xffffffff),
-          border: Border.all(width: 1, color: Color(0xffdcdcdc)),
+          border: Border.all(width: ScreenUtil().setWidth(1), color: Color(0xffdcdcdc)),
           borderRadius: BorderRadius.all(
-            Radius.circular(8.0),
+            Radius.circular(ScreenUtil().setWidth(12.0)),
           ),
         ),
         child: SingleChildScrollView(
@@ -27,14 +28,14 @@ class _VideoCardState extends State<VideoCard> {
                   children: <Widget>[
                     ClipRRect(
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(8.0),
-                            topRight: Radius.circular(8.0)),
+                            topLeft: Radius.circular(ScreenUtil().setWidth(12.0)),
+                            topRight: Radius.circular(ScreenUtil().setWidth(12.0))),
                         child: Image.network(
                             "http://i2.hdslb.com/bfs/archive/fb9dfd1e58ffd9e162476113ab1705aadad3a167.jpg@480w_270h_1c")),
                     Positioned(
-                        bottom: 6.0,
-                        left: 5.0,
-                        right: 5.0,
+                        bottom: ScreenUtil().setHeight(15.0),
+                        left: ScreenUtil().setWidth(12.0),
+                        right: ScreenUtil().setWidth(12.0),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
@@ -43,22 +44,22 @@ class _VideoCardState extends State<VideoCard> {
                                   children: <Widget>[
                                     Icon(
                                       CustomIcon.playIcon,
-                                      size: 18.0,
+                                      size: ScreenUtil().setSp(35.0),
                                       color: Colors.white,
                                     ),
-                                    Padding(padding: EdgeInsets.only(left: 5.0)),
+                                    Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(12.0),)),
                                     Text("398",style: TextStyle(color: Colors.white),),
-                                    Padding(padding: EdgeInsets.only(right: 5.0)),
+                                    Padding(padding: EdgeInsets.only(right: ScreenUtil().setWidth(12.0),)),
                                   ],
                                 ),
                                 Row(
                                   children: <Widget>[
                                     Icon(
                                       CustomIcon.comment,
-                                      size: 18.0,
+                                      size: ScreenUtil().setSp(35.0),
                                       color: Colors.white,
                                     ),
-                                    Padding(padding: EdgeInsets.only(left: 5.0)),
+                                    Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(12.0))),
                                     Text("298",style: TextStyle(color: Colors.white),)
                                   ],
                                 ),
@@ -77,12 +78,12 @@ class _VideoCardState extends State<VideoCard> {
                     "官宣中国第二艘国产航母已在上海开工已在上海开工",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: ScreenUtil().setSp(30.0)),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+                  padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(8.0), horizontal: ScreenUtil().setWidth(15.0)),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(15.0)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,9 +96,9 @@ class _VideoCardState extends State<VideoCard> {
                           icon: Icon(
                             CustomIcon.dot,
                             color: Color(0xff000000),
-                            size: 16.0,
+                            size: ScreenUtil().setSp(30.0),
                           ),
-                          iconSize: 18.0,
+                          iconSize: ScreenUtil().setSp(30.0),
                           padding: EdgeInsets.all(0),
                           alignment: Alignment.topRight,
                           onPressed: null)
