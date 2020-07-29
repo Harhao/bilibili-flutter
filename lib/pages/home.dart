@@ -1,6 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../component/avatar_menu.dart';
 import '../config/tabview_page.dart';
 import '../config/customIcon.dart';
@@ -30,12 +31,12 @@ class _HomeState extends State<Home> {
               elevation: 1.0,
               leading: AvatarMenu(),
               title: Container(
-                  padding: EdgeInsets.all(5.0),
+                  padding: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     backgroundBlendMode: BlendMode.hardLight,
                     // backgroundBlendMode: BlendMode.colorDodge,
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(ScreenUtil().setWidth(30.0))),
                   ),
                   child: Builder(
                       builder: (context) => GestureDetector(
@@ -43,21 +44,21 @@ class _HomeState extends State<Home> {
                           child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                Padding(padding: EdgeInsets.only(left: 8.0)),
+                                Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0))),
                                 Icon(
                                   Icons.search,
                                   color: Colors.white,
-                                  size: 26.0,
+                                  size: ScreenUtil().setSp(40.0),
                                 ),
-                                Padding(padding: EdgeInsets.only(left: 8.0)),
+                                Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(18.0))),
                                 Text(
                                   "王者荣耀职业联赛",
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18.0,
+                                    fontSize: ScreenUtil().setSp(32.0),
                                   ),
                                 ),
-                                Padding(padding: EdgeInsets.only(right: 20.0)),
+                                Padding(padding: EdgeInsets.only(right: ScreenUtil().setWidth(30.0))),
                               ])))),
               actions: <Widget>[
                 IconButton(
@@ -74,12 +75,13 @@ class _HomeState extends State<Home> {
                     onPressed: null),
               ],
               bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(48),
+                  preferredSize: Size.fromHeight(ScreenUtil().setHeight(95.0)),
                   child: Material(
                     color: Colors.white,
                     child: TabBar(
                       isScrollable: true,
-                      labelStyle: TextStyle(fontSize: 18.0),
+                      labelStyle: TextStyle(fontSize: ScreenUtil().setSp(32.0)),
+                      unselectedLabelStyle: TextStyle(fontSize: ScreenUtil().setSp(32.0)),
                       labelColor: Theme.of(context).primaryColor,
                       unselectedLabelColor: Color(0xff8a8a8a),
                       indicatorColor: Theme.of(context).primaryColor,

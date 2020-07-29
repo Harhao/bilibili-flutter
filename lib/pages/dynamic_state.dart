@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../component/avatar_menu.dart';
 import '../config/tabview_page.dart';
 import '../config/customIcon.dart';
@@ -40,7 +41,7 @@ class _DynamicPageState extends State<DynamicState> {
                     onPressed: null),
               ],
               bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(48),
+                  preferredSize: Size.fromHeight(ScreenUtil().setHeight(95.0)),
                   child: Material(
                     color: Colors.white,
                     child: Container(
@@ -48,7 +49,8 @@ class _DynamicPageState extends State<DynamicState> {
                       width: MediaQuery.of(context).size.width,
                         child: TabBar(
                       isScrollable: true,
-                      labelStyle: TextStyle(fontSize: 18.0),
+                      labelStyle: TextStyle(fontSize: ScreenUtil().setSp(32.0)),
+                      unselectedLabelStyle: TextStyle(fontSize: ScreenUtil().setSp(32.0)),                      
                       labelColor: Theme.of(context).primaryColor,
                       unselectedLabelColor: Color(0xff8a8a8a),
                       indicatorColor: Theme.of(context).primaryColor,

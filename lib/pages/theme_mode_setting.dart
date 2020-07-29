@@ -1,6 +1,7 @@
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../store/theme._setting.dart';
 import '../config/customIcon.dart';
 
@@ -13,8 +14,8 @@ class ThemeModeSetting extends StatelessWidget {
         leading: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(5.0)),
           child: Container(
-            width: 30.0,
-            height: 30.0,
+            width: ScreenUtil().setWidth(50.0),
+            height: ScreenUtil().setWidth(50.0),
             decoration: BoxDecoration(
               color: value
             ),

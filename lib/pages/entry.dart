@@ -39,7 +39,8 @@ class _EntryState extends State<Entry> {
               fixedColor: Theme.of(context).primaryColor,
               unselectedItemColor: Color(0xff8b8b8b),
               unselectedLabelStyle: TextStyle(color: Color(0xff8b8b8b)),
-              unselectedFontSize: 14.0,
+              unselectedFontSize: ScreenUtil().setSp(26.0),
+              selectedFontSize: ScreenUtil().setSp(26.0),
               currentIndex: _selectedIndex,
               onTap: selectedBottomBar,
               items: <BottomNavigationBarItem>[
