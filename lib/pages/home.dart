@@ -83,6 +83,8 @@ class _HomeState extends State<Home> {
               ],
               bottom: PreferredSize(
                   preferredSize: Size.fromHeight(ScreenUtil().setHeight(95.0)),
+                  // preferredSize: Size(MediaQuery.of(context).size.width,
+                  //     ScreenUtil().setHeight(95.0)),
                   child: Material(
                       color: Colors.white,
                       child: SingleChildScrollView(
