@@ -8,7 +8,8 @@ class ThemeSetting with ChangeNotifier {
     'treeGreen': Color(0xff8ac24a),
     'skyBlue': Color(0xff1f95f2),
     'gayPurple': Color(0xff9d28b4),
-    'night': Color(0xff0e0e0e)
+    'night': Color(0xff0e0e0e),
+    'white': Color(0xffffffff)
   };
   String themeKey = 'treeGreen';
   void changePrimaryColor(String themeKey) {

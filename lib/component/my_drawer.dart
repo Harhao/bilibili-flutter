@@ -47,7 +47,7 @@ class MyDrawer extends StatelessWidget {
                               icon: Icon(
                                 CustomIcon.wallet,
                                 color: Colors.white,
-                                size: ScreenUtil().setSp(60.0),
+                                size: ScreenUtil().setSp(50.0),
                               ),
                               onPressed: null,
                             ),
@@ -55,7 +55,7 @@ class MyDrawer extends StatelessWidget {
                               icon: Icon(
                                 CustomIcon.scan,
                                 color: Colors.white,
-                                size: ScreenUtil().setSp(60.0),
+                                size: ScreenUtil().setSp(50.0),
                               ),
                               onPressed: null,
                             ),

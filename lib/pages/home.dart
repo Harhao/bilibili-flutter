@@ -86,9 +86,26 @@ class _HomeState extends State<Home> {
                   // preferredSize: Size(MediaQuery.of(context).size.width,
                   //     ScreenUtil().setHeight(95.0)),
                   child: Material(
-                      color: Colors.white,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
+                    color: Colors.white,
+                    // SingleChildScrollView(
+                    //   scrollDirection: Axis.horizontal,
+                    //   child: TabBar(
+                    //     isScrollable: true,
+                    //     labelStyle:
+                    //         TextStyle(fontSize: ScreenUtil().setSp(32.0)),
+                    //     unselectedLabelStyle:
+                    //         TextStyle(fontSize: ScreenUtil().setSp(32.0)),
+                    //     labelColor: Theme.of(context).primaryColor,
+                    //     unselectedLabelColor: Color(0xff8a8a8a),
+                    //     indicatorColor: Theme.of(context).primaryColor,
+                    //     indicatorSize: TabBarIndicatorSize.label,
+                    //     indicatorWeight: 3.0,
+                    //     tabs: Tabs,
+                    //   ),
+                    // )
+                    child: Container(
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width,
                         child: TabBar(
                           isScrollable: true,
                           labelStyle:
@@ -101,8 +118,8 @@ class _HomeState extends State<Home> {
                           indicatorSize: TabBarIndicatorSize.label,
                           indicatorWeight: 3.0,
                           tabs: Tabs,
-                        ),
-                      )))),
+                        )),
+                  ))),
           body: TabBarView(children: <Widget>[
             // ignore: sdk_version_ui_as_code
             ...TabViewPage.list

@@ -68,7 +68,7 @@ class _VideoCardState extends State<VideoCard> {
                                 "13:04",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold),
+                                  ),
                               )
                             ]))
                   ],
@@ -90,12 +90,12 @@ class _VideoCardState extends State<VideoCard> {
                     children: <Widget>[
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[Text("社科人文.辽宁舰")],
+                        children: <Widget>[Text("社科人文.辽宁舰",style: TextStyle(color: Color(0xff8d8d8d),fontSize: ScreenUtil().setSp(20.0)),)],
                       ),
                       IconButton(
                           icon: Icon(
                             CustomIcon.dot,
-                            color: Color(0xff000000),
+                            color: Color(0xff8d8d8d),
                             size: ScreenUtil().setSp(30.0),
                           ),
                           iconSize: ScreenUtil().setSp(30.0),

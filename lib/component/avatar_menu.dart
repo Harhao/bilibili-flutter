@@ -9,7 +9,7 @@ class AvatarMenu extends StatelessWidget {
     final inheritedContext = InheritedContext.of(context);
     // TODO: implement build
     return Padding(
-        padding: EdgeInsets.all(ScreenUtil().setWidth(12.0)),
+        padding: EdgeInsets.all(ScreenUtil().setWidth(15.0)),
         child: Builder(
             builder: (context) => GestureDetector(
                 onTap: inheritedContext.openDrawer,
