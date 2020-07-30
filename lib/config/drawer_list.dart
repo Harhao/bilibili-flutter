@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'customIcon.dart';
 class DrawerList {
   static List<Widget> list = <Widget>[
     ListTile(
-      leading: Icon(CustomIcon.home, color: Color(0xff929292),),
+      leading: Icon(CustomIcon.home, color: Color(0xff929292)),
       title: Text("首页"),
     ),
     ListTile(

@@ -35,38 +35,39 @@ class _HomeState extends State<Home> {
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     backgroundBlendMode: BlendMode.hardLight,
-                    // backgroundBlendMode: BlendMode.colorDodge,
                     borderRadius: BorderRadius.all(
                         Radius.circular(ScreenUtil().setWidth(30.0))),
                   ),
                   child: Builder(
                       builder: (context) => GestureDetector(
                           onTap: _navigateToSearchPage,
-                          child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Padding(
-                                    padding: EdgeInsets.only(
-                                        left: ScreenUtil().setWidth(10.0))),
-                                Icon(
-                                  Icons.search,
-                                  color: Colors.white,
-                                  size: ScreenUtil().setSp(40.0),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(
-                                        left: ScreenUtil().setWidth(18.0))),
-                                Text(
+                          child: Row(mainAxisSize: MainAxisSize.min, children: <
+                              Widget>[
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    left: ScreenUtil().setWidth(10.0))),
+                            Icon(
+                              Icons.search,
+                              color: Colors.white,
+                              size: ScreenUtil().setSp(40.0),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    left: ScreenUtil().setWidth(18.0))),
+                            Container(
+                                width: MediaQuery.of(context).size.width * 0.35,
+                                child: Text(
                                   "王者荣耀职业联赛",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: ScreenUtil().setSp(32.0),
                                   ),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(
-                                        right: ScreenUtil().setWidth(30.0))),
-                              ])))),
+                                  overflow: TextOverflow.ellipsis,
+                                )),
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    right: ScreenUtil().setWidth(30.0))),
+                          ])))),
               actions: <Widget>[
                 IconButton(
                     icon: Icon(
@@ -87,22 +88,6 @@ class _HomeState extends State<Home> {
                   //     ScreenUtil().setHeight(95.0)),
                   child: Material(
                     color: Colors.white,
-                    // SingleChildScrollView(
-                    //   scrollDirection: Axis.horizontal,
-                    //   child: TabBar(
-                    //     isScrollable: true,
-                    //     labelStyle:
-                    //         TextStyle(fontSize: ScreenUtil().setSp(32.0)),
-                    //     unselectedLabelStyle:
-                    //         TextStyle(fontSize: ScreenUtil().setSp(32.0)),
-                    //     labelColor: Theme.of(context).primaryColor,
-                    //     unselectedLabelColor: Color(0xff8a8a8a),
-                    //     indicatorColor: Theme.of(context).primaryColor,
-                    //     indicatorSize: TabBarIndicatorSize.label,
-                    //     indicatorWeight: 3.0,
-                    //     tabs: Tabs,
-                    //   ),
-                    // )
                     child: Container(
                         alignment: Alignment.center,
                         width: MediaQuery.of(context).size.width,

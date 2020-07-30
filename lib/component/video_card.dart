@@ -78,7 +78,7 @@ class _VideoCardState extends State<VideoCard> {
                     "官宣中国第二艘国产航母已在上海开工已在上海开工",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
-                    style: TextStyle(fontSize: ScreenUtil().setSp(30.0)),
+                    style: TextStyle(fontSize: ScreenUtil().setSp(26.0)),
                   ),
                   padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(8.0), horizontal: ScreenUtil().setWidth(15.0)),
                 ),
