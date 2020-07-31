@@ -37,6 +37,16 @@ class CustomDrawer extends StatelessWidget {
 
       case TargetPlatform.fuchsia:
         label = semanticLabel ?? MaterialLocalizations.of(context)?.drawerLabel;
+        break;
+      case TargetPlatform.linux:
+        // TODO: Handle this case.
+        break;
+      case TargetPlatform.macOS:
+        // TODO: Handle this case.
+        break;
+      case TargetPlatform.windows:
+        // TODO: Handle this case.
+        break;
     }
 
     final double _width = MediaQuery.of(context).size.width * widthPercent;

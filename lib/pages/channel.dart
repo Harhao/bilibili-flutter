@@ -58,10 +58,7 @@ class _ChannelState extends State<Channel> {
                         ),
                         IconButton(icon: Icon(Icons.menu), onPressed: null)
                       ])))),
-          body: TabBarView(children: <Widget>[
-            // ignore: sdk_version_ui_as_code
-            ...TabViewPage.channelList
-          ]),
+          body: TabBarView(children: TabViewPage.channelList),
         ));
   }
 }

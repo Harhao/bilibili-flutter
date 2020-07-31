@@ -105,10 +105,7 @@ class _HomeState extends State<Home> {
                           tabs: Tabs,
                         )),
                   ))),
-          body: TabBarView(children: <Widget>[
-            // ignore: sdk_version_ui_as_code
-            ...TabViewPage.list
-          ]),
+          body: TabBarView(children: TabViewPage.list),
         ));
   }
 

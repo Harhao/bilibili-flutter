@@ -59,10 +59,7 @@ class _DynamicPageState extends State<DynamicState> {
                       tabs: Tabs,
                     )),
                   ))),
-          body: TabBarView(children: <Widget>[
-            // ignore: sdk_version_ui_as_code
-            ...TabViewPage.dynamiclList
-          ]),
+          body: TabBarView(children:TabViewPage.dynamiclList),
         ));
   }
 }

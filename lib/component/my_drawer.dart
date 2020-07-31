@@ -2,12 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:barcode_scan/barcode_scan.dart';
+import 'browser.dart';
 import '../store/theme._setting.dart';
 import '../config/drawer_list.dart';
 import '../config/customIcon.dart';
 import '../routers/application.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
+  @override
+  _MyDrawerState createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  String barcode = "";
+  Future scanCode() async {
+    // try {
+    //   String barcode = await BarcodeScanner.scan();
+    //   print('barCode is ==============> barcode');
+      // setState(() => this.barcode = barcode);
+      // Navigator.of(context).push(new MaterialPageRoute(builder: (_) {
+      //   return new Browser(
+      //     url: "https://flutter-io.cn/",
+      //     title: "Flutter 中文社区",
+      //   );
+      // }));
+    // } catch (e) {
+    //   if (e.code == BarcodeScanner.CameraAccessDenied) {
+    //     setState(() {
+    //       this.barcode = 'The user did not grant the camera permission!';
+    //     });
+    //   } else {
+    //     setState(() => this.barcode = 'Unknown error: $e');
+    //   }
+    // }
+    // String url =  "https://flutter-io.cn/";
+    // String title =  "Flutter 中文社区";
+    // Application.router.navigateTo(context, '/webview?title=${Uri.encodeComponent(title)}&url=${Uri.encodeComponent(url)}');
+  }
+
   @override
   Widget build(BuildContext context) {
     ThemeSetting appTheme = Provider.of<ThemeSetting>(context);
@@ -57,7 +90,7 @@ class MyDrawer extends StatelessWidget {
                                 color: Colors.white,
                                 size: ScreenUtil().setSp(45.0),
                               ),
-                              onPressed: null,
+                              onPressed: scanCode,
                             ),
                           ])
                     ]),
@@ -133,11 +166,14 @@ class MyDrawer extends StatelessWidget {
                 ]),
               ])),
           Container(
-              padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(20.0), horizontal: ScreenUtil().setWidth(25.0)),
+              padding: EdgeInsets.symmetric(
+                  vertical: ScreenUtil().setHeight(20.0),
+                  horizontal: ScreenUtil().setWidth(25.0)),
               decoration: BoxDecoration(
                   border: Border(
-                      bottom:
-                          BorderSide(width: ScreenUtil().setWidth(1), color: Color(0xff8d8d8d)))),
+                      bottom: BorderSide(
+                          width: ScreenUtil().setWidth(1),
+                          color: Color(0xff8d8d8d)))),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -154,15 +190,20 @@ class MyDrawer extends StatelessWidget {
                                         color: Theme.of(context).primaryColor,
                                         fontSize: ScreenUtil().setSp(35),
                                         fontWeight: FontWeight.bold))),
-                            Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(25.0))),
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    left: ScreenUtil().setWidth(25.0))),
                             Text(
                               "了解更多权益",
                               style: TextStyle(
-                                  fontSize: ScreenUtil().setSp(28), color: Color(0xffbdbdbd)),
+                                  fontSize: ScreenUtil().setSp(28),
+                                  color: Color(0xffbdbdbd)),
                             )
                           ],
                         ),
-                        Padding(padding: EdgeInsets.only(top: ScreenUtil().setHeight(20.0))),
+                        Padding(
+                            padding: EdgeInsets.only(
+                                top: ScreenUtil().setHeight(20.0))),
                         Text(
                           "番剧抢先看，4K超清体验",
                           style: TextStyle(fontSize: ScreenUtil().setSp(28)),
@@ -173,13 +214,16 @@ class MyDrawer extends StatelessWidget {
                         icon: Icon(CustomIcon.arrowRight), onPressed: null)
                   ])),
           Container(
-              padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(25.0)),
-              margin: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(25.0)),
+              padding:
+                  EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(25.0)),
+              margin:
+                  EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(25.0)),
               decoration: BoxDecoration(
                   color: Color(0xffffffff),
                   border: Border(
-                      bottom:
-                          BorderSide(width: ScreenUtil().setWidth(1), color: Color(0xff8d8d8d)))),
+                      bottom: BorderSide(
+                          width: ScreenUtil().setWidth(1),
+                          color: Color(0xff8d8d8d)))),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
@@ -200,7 +244,9 @@ class MyDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                      top: BorderSide(width: ScreenUtil().setWidth(1), color: Color(0xff8d8d8d)))),
+                      top: BorderSide(
+                          width: ScreenUtil().setWidth(1),
+                          color: Color(0xff8d8d8d)))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
@@ -212,12 +258,16 @@ class MyDrawer extends StatelessWidget {
                                   .navigateTo(context, '/theme'),
                               child: Row(
                                 children: <Widget>[
-                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(20.0))),
+                                  Padding(
+                                      padding: EdgeInsets.only(
+                                          left: ScreenUtil().setWidth(20.0))),
                                   Icon(
                                     CustomIcon.themeIcon,
                                     color: Color(0xff929292),
                                   ),
-                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0))),
+                                  Padding(
+                                      padding: EdgeInsets.only(
+                                          left: ScreenUtil().setWidth(10.0))),
                                   Text(
                                     "主题",
                                     style: TextStyle(color: Color(0xff929292)),
@@ -234,7 +284,9 @@ class MyDrawer extends StatelessWidget {
                                     CustomIcon.settting,
                                     color: Color(0xff929292),
                                   ),
-                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0))),
+                                  Padding(
+                                      padding: EdgeInsets.only(
+                                          left: ScreenUtil().setWidth(10.0))),
                                   Text(
                                     "设置",
                                     style: TextStyle(color: Color(0xff929292)),
@@ -251,7 +303,9 @@ class MyDrawer extends StatelessWidget {
                                     CustomIcon.nightMode,
                                     color: Color(0xff929292),
                                   ),
-                                  Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0))),
+                                  Padding(
+                                      padding: EdgeInsets.only(
+                                          left: ScreenUtil().setWidth(10.0))),
                                   Text(
                                     "夜间",
                                     style: TextStyle(color: Color(0xff929292)),
