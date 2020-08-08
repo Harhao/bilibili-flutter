@@ -1,15 +1,11 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'video_card.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+import '../component/video_card.dart';
+import '../component/grid_card.dart';
+import 'package:flutter/material.dart';
 
-class Recomment extends StatefulWidget {
-  @override
-  _RecommentState createState() => _RecommentState();
-}
-
-class _RecommentState extends State<Recomment> {
+class Living extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> list = <String>[
@@ -18,7 +14,9 @@ class _RecommentState extends State<Recomment> {
       "http://i0.hdslb.com/bfs/archive/24ec47b3b790b4784129d2d33d0fd1bc31c1a7a4.png@480w_270h"
     ];
     return Container(
-        padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(25.0), vertical: ScreenUtil().setHeight(15.0)),
+        padding: EdgeInsets.symmetric(
+            horizontal: ScreenUtil().setWidth(25.0),
+            vertical: ScreenUtil().setHeight(15.0)),
         child: ListView(
           shrinkWrap: true,
           children: <Widget>[
@@ -26,17 +24,19 @@ class _RecommentState extends State<Recomment> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width * 0.295,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(ScreenUtil().setWidth(40.0))),
+                borderRadius: BorderRadius.all(
+                    Radius.circular(ScreenUtil().setWidth(40.0))),
               ),
               alignment: Alignment.topCenter,
               child: new Swiper(
                 itemBuilder: (BuildContext context, int index) {
                   return ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(ScreenUtil().setWidth(40.0))),
+                      borderRadius: BorderRadius.all(
+                          Radius.circular(ScreenUtil().setWidth(40.0))),
                       child: new Image.network(
-                    list[index],
-                    fit: BoxFit.contain,
-                  ));
+                        list[index],
+                        fit: BoxFit.contain,
+                      ));
                 },
                 loop: true,
                 itemCount: list.length,
@@ -44,7 +44,25 @@ class _RecommentState extends State<Recomment> {
                     new SwiperPagination(alignment: Alignment.bottomRight),
               ),
             ),
-            Padding(padding: EdgeInsets.only(top: ScreenUtil().setHeight(15.0))),
+            Padding(
+                padding: EdgeInsets.only(top: ScreenUtil().setHeight(15.0))),
+            GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 5,
+                  crossAxisSpacing: ScreenUtil().setHeight(20.0),
+                  mainAxisSpacing: ScreenUtil().setWidth(20.0)),
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return GridCard(
+                    url:
+                        "https://i2.hdslb.com/bfs/face/9e279be66273dc97d82a6c8ebecf3d78548f85b6.jpg",
+                    title: "王者荣耀");
+              },
+            ),
+            Padding(
+                padding: EdgeInsets.only(top: ScreenUtil().setHeight(20.0))),
             GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,

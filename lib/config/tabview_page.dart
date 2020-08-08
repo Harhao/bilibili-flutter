@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 
-import '../component/recomment.dart';
-import '../component/living.dart';
-import '../component/purse.dart';
-import '../component/movie.dart';
-import '../component/song.dart';
-import '../component/comic.dart';
-import '../component/channel_view.dart';
-import '../component/dynamic_living.dart';
-import '../component/dynamic_pursue.dart';
-import '../component/dynamic_recomment.dart';
+import '../container/recomment.dart';
+import '../container/living.dart';
+import '../container/purse.dart';
+import '../container/movie.dart';
+import '../container/song.dart';
+import '../container/comic.dart';
+import '../container/channel_view.dart';
+import '../container/dynamic_living.dart';
+import '../container/dynamic_pursue.dart';
+import '../container/dynamic_recomment.dart';
 
 
 class TabViewPage {
