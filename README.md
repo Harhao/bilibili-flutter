@@ -17,7 +17,7 @@
     ```
   - 运行app
     ```
-    	flutter run 
+    flutter run 
     ```
     
 ## License
