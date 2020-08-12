@@ -15,6 +15,7 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     ThemeSetting appTheme = Provider.of<ThemeSetting>(context);
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: RaisedButton(onPressed: () {
           appTheme.changePrimaryColor('powder');
