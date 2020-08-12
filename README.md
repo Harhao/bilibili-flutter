@@ -16,7 +16,7 @@
     flutter pub get
     ```
   - 运行app
-    	```
+    ```
     	flutter run 
     ```
     
